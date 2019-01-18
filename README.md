@@ -31,6 +31,7 @@ node app.js
 ``` bash
 # Nodejs
 # Sass
+# Jquery
 
 ```
 
@@ -38,5 +39,6 @@ node app.js
 
 ``` bash
 # expressJS - npm i express
-#node-sass-middleware - npm install node-sass-middlewar
+# node-sass-middleware - npm install node-sass-middlewar
+# Jquery - npm i jquery
 ```

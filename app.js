@@ -1,11 +1,11 @@
 // Require expressjs ramework
-const express = require('express')
+const express = require('express');
 // Require node-sass-middleware
-var sassMiddleware = require('node-sass-middleware');
+const sassMiddleware = require('node-sass-middleware');
 // Require path
-var path = require('path');
+const path = require('path');
 // Assign to constant expressJS function
-const app = express()
+const app = express();
 // Port constant to choose listening port
 const port = 3000
 
@@ -20,6 +20,10 @@ app.use(sassMiddleware({
     outputStyle: 'compressed',
     prefix:  '/style'
 }));
+
+// Jquery middleware
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'))
+
 
 // MIddleware to serve folder
 app.use(express.static(path.join(__dirname, 'public')));
