@@ -1,9 +1,67 @@
-$greenery: #A7E163;
-$dark-blue: #2589BD;
-$white-color: #ffffff;
-$dark-white: #CECECE;
-$sky-blue: #4FFBFF;
+/* Variable block beginning */
 
-.container {
-    color:$greenery;
+/* Pantone greenery color */
+$greenery: #A7E163;
+/* White text color */
+$white-color: #ffffff;
+/* Dark text color */
+$dark-white: #CECECE;
+
+/* Variable block ending */
+
+
+/* mixin block beginning */
+
+
+@font-face {
+    font-family: 'RobotoLight';
+    src: url('/fonts/Roboto-Light.ttf'),
 }
+
+@font-face {
+   font-family: 'RobotoRegular';
+   src: url('/fonts/Roboto-Regular.ttf'),
+}
+
+@font-face {
+    font-family: 'RobotoBold';
+    src: url('/fonts/Roboto-Bold.ttf'),
+}
+
+
+/* mixin for roboto-light font*/
+@mixin robotoLight() {
+    font-family:RobotoLight,
+ }
+ 
+ /* mixin for roboto-regular font*/
+ @mixin robotoRegular() {
+    font-family:RobotoRegular,
+ }
+ 
+ /* mixin for roboto-bold font*/
+ @mixin  robotoBold() {
+    font-family:RobotoBold,
+ }
+
+
+ /* Mixin block ending */
+
+
+/* style block beginning */
+
+
+/* HTML BODY deafult style */
+html,
+body {
+    @include robotoRegular();
+}
+
+/* Wrapper style */
+#mainwrapper {
+    background-color: $white-color;
+    color: $greenery;
+    background-color: $dark-white;
+}
+
+/* Style block ending */
