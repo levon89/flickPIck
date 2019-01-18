@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/levon89/flickPIck#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "node-sass-middleware": "^0.11.0",
+    "serve-favicon": "^2.5.0"
   }
 }
