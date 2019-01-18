@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/levon89/flickPIck/issues"
   },
-  "homepage": "https://github.com/levon89/flickPIck#readme"
+  "homepage": "https://github.com/levon89/flickPIck#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
 }
