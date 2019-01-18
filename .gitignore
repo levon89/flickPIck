@@ -32,6 +32,9 @@ bower_components
 # package-lock.json restrict
 package-lock.json
 
+# restrict to add compiled style.css
+style/package-lock.json
+
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
 

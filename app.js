@@ -1,5 +1,9 @@
 // Require expressjs ramework
 const express = require('express')
+// Require node-sass-middleware
+var sassMiddleware = require('node-sass-middleware');
+// Require path
+var path = require('path');
 // Assign to constant expressJS function
 const app = express()
 // Port constant to choose listening port
@@ -8,9 +12,19 @@ const port = 3000
 // Config server to prevent sever data leak
 app.set('x-powered-by', false);
 
+// MIddleware to congfigure sass
+app.use(sassMiddleware({
+    src: path.join(__dirname, 'public/scss/'),
+    dest: path.join(__dirname, 'public/style/'),
+    debug: true,
+    outputStyle: 'compressed',
+    prefix:  '/style'
+}));
+
 // MIddleware to serve folder
-app.use(express.static('public'))
-app.use(express.static('views'))
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views')));
+
 
 
   
