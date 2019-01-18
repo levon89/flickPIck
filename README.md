@@ -25,3 +25,17 @@ npm i -s
 node app.js 
 
 ```
+
+## Used technologies
+
+``` bash
+# Nodejs
+
+```
+
+## Used packages
+
+``` bash
+# expressJS - npm i express
+
+```
