@@ -1,11 +1,14 @@
 /* Variable block beginning */
 
-/* Pantone greenery color */
 $greenery: #A7E163;
-/* White text color */
 $white-color: #ffffff;
-/* Dark text color */
 $dark-white: #CECECE;
+$center: center;
+$semi-bold: 700;
+$none: none;
+$inherit: inherit;
+$transparent: transparent;
+$block: block;
 
 /* Variable block ending */
 
@@ -44,6 +47,48 @@ $dark-white: #CECECE;
     font-family:RobotoBold,
  }
 
+ /* MIxin for text alignmet */
+ @mixin textAlignmentAndStyle($color, $size, $weight) {
+     color: $color;
+     font-size: $size;
+     font-weight: $weight;
+ }
+
+/* MIxin for text alignmet */
+@mixin paddingAlignment($top, $bottom, $left, $right) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+    padding-left: $left;
+    padding-right: $right;
+}
+
+/* MIxin for text alignmet */
+@mixin marginAlignment($top, $bottom, $left, $right) {
+    margin-top: $top;
+    margin-bottom: $bottom;
+    margin-left: $left;
+    margin-right: $right;
+}
+
+/* Width mixin */
+@mixin widthValue($width) {
+    width: $width;
+}
+
+/* MIxin for text alignmet */
+@mixin borderStyle($borderWidth, $borderStyle, $borderColor) {
+    border-style: $borderStyle;
+    border-color: $borderColor;
+    border-width: $borderWidth;
+}
+
+/* MIxin for text alignmet */
+@mixin borderRadius($topLeft, $topRight, $bottomLeft, $bottomRight) {
+    border-top-left-radius: $topLeft;
+    border-top-right-radius: $topRight;
+    border-bottom-left-radius: $bottomLeft;
+    border-bottom-right-radius: $bottomRight
+}
 
  /* Mixin block ending */
 
@@ -55,13 +100,108 @@ $dark-white: #CECECE;
 html,
 body {
     @include robotoRegular();
+    @include textAlignmentAndStyle($white-color, 13px, $semi-bold)
 }
 
 /* Wrapper style */
 #mainwrapper {
+    color: $white-color;
+    background-color: $dark-white;
+    text-align: $center;
+    @include paddingAlignment(2em, 2em, 1em, 1em);
+}
+
+/* search block parent */
+#searchblock {
+    @include paddingAlignment(2em, 2em, 1em, 1em);
+    @include widthValue(100%);
+}
+
+/* search section parent input & submit button styles */
+#searchblock> input:first-child {
+    background-color: $white-color;
+    color: $dark-white;
+    outline: $none;
+    @include widthValue(20%);
+    @include borderStyle(1px, solid, $transparent);
+    @include borderRadius(3px, 3px, 3px, 3px);
+    @include paddingAlignment(5px, 5px, 1.5px, 1.5px);
+}
+
+/* search section parent input & submit button styles */
+#searchblock> input:nth-child(2) {
+    @include textAlignmentAndStyle($greenery, 13px, $semi-bold);
+    background-color: $transparent;
+    color: $greenery;
+    @include borderStyle(1px, solid, $white-color);
+    outline: 0;
+    @include borderRadius(3px, 3px, 3px, 3px);
+    @include paddingAlignment(5px, 5px, 2px, 2px);
+}
+/* search section parent input & submit button styles */
+#searchblock> input:nth-child(2):hover {
+    background-color: $greenery;
+    color: $white-color;
+    @include borderStyle(1px, solid, $transparent);
+    outline: 0;
+    @include borderRadius(3px, 3px, 3px, 3px);
+    @include paddingAlignment(5px, 5px, 2px, 2px);
+}
+
+/* search section parent input & submit button styles */
+#searchblock> input:nth-child(2):active {
     background-color: $white-color;
     color: $greenery;
-    background-color: $dark-white;
+    @include borderStyle(1px, solid, $transparent);
+    outline: 0;
+    @include borderRadius(3px, 3px, 3px, 3px);
+    @include paddingAlignment(5px, 5px, 2px, 2px);
+}
+
+/* Drag drop section style */
+#dragdropsection {
+    @include borderStyle(2px, dotted, $white-color);
+    @include marginAlignment(1em, 1em, 2em, 2em); 
+    @include borderRadius(7px, 7px, 7px, 7px);
+    @include paddingAlignment(5px, 5px, 2px, 2px);
+}
+
+/* Basket section element style */
+#basketsection {
+    display: $block;
+    @include widthValue(100%);
+    @include robotoBold();
+    @include textAlignmentAndStyle($inherit, 19px, 900);
+}
+
+/* basket section first */
+#basketsection> div > input:first-child, #basketsection> div > input:nth-child(2){
+    @include textAlignmentAndStyle($greenery, 13px, $semi-bold);
+    background-color: $transparent;
+    color: $greenery;
+    @include widthValue(40%);
+    @include borderStyle(1px, solid, $white-color);
+    outline: 0;
+    @include borderRadius(3px, 3px, 3px, 3px);
+    @include paddingAlignment(1em, 1em, 2px, 2px);
+}
+/* search section parent input & submit button styles */
+#basketsection> div > input:first-child:hover, #basketsection> div > input:nth-child(2):hover {
+    background-color: $greenery;
+    color: $white-color;
+    @include widthValue(40%);
+    @include borderStyle(1px, solid, $transparent);
+    outline: 0;
+    @include borderRadius(3px, 3px, 3px, 3px);
+    @include paddingAlignment(1em, 1em, 2px, 2px);
+}
+
+/* Group section */
+#dgroupsection {
+    @include borderStyle(2px, dotted, $white-color);
+    @include marginAlignment(1em, 1em, 2em, 2em); 
+    @include borderRadius(7px, 7px, 7px, 7px);
+    @include paddingAlignment(5px, 5px, 2px, 2px);
 }
 
 /* Style block ending */
