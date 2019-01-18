@@ -1,0 +1,19 @@
+{
+  "name": "flicker_drag_drop",
+  "version": "0.0.1",
+  "description": "Simple app for filcker image search",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levon89/flickPIck.git"
+  },
+  "author": "levonisadjanyan@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/levon89/flickPIck/issues"
+  },
+  "homepage": "https://github.com/levon89/flickPIck#readme"
+}
