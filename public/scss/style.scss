@@ -204,4 +204,14 @@ body {
     @include paddingAlignment(5px, 5px, 2px, 2px);
 }
 
+/* Picture block */
+#pictureblock {
+    @include widthValue(100%);
+}
+
+/* Picture block */
+#pictureblock > img {
+    @include widthValue(15%)
+}
+
 /* Style block ending */
