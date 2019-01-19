@@ -31,7 +31,7 @@ node app.js
 ``` bash
 # Nodejs
 # Sass
-# Jquery
+# Jquery & Jquery-UI
 
 ```
 
@@ -41,4 +41,5 @@ node app.js
 # expressJS - npm i express
 # node-sass-middleware - npm install node-sass-middlewar
 # Jquery - npm i jquery
+# Jquery-UI - https://jqueryui.com
 ```

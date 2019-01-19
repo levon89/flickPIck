@@ -39,19 +39,20 @@ $(window).on('load', function() {
                     let resultUrl = 'https://farm' + value.farm + '.staticflickr.com/' + value.server + '/' + value.id + '_' + value.secret + '.jpg';
                     // new image appent to predefined element and add src to already created img from previous variable 
                     $('<img>').attr("src", resultUrl).appendTo("#pictureblock");
-
-                  }).fail(function(jqxhr, textStatus, error) {
-
-                    let err = textStatus + ', ' + error;
-                    alert( 'Request Failed: ' + ' ' + err );
-                    
-                });
-
+                  })
+                // Not to allow to drag from parent element
+                $( "img" ).draggable({ containment: "#dragdropsection", scroll: false });
             } else {
 
                 alert('We can not show your result, because current result is' + ' ' + data.photos.photo.length + ' ' + 'and its need to be equal to 5 ))');
 
             }
-        })
+        }).fail(function(jqxhr, textStatus, error) {
+
+            let err = textStatus + ', ' + error;
+            alert( 'Request Failed: ' + ' ' + err );
+
+        });
     });
+
 });
