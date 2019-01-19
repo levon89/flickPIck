@@ -43,3 +43,6 @@ node app.js
 # Jquery - npm i jquery
 # Jquery-UI - https://jqueryui.com
 ```
+## UML diagram
+UML diagram. If you could not see in github try to open UML.pdf file , which is in core of git
+![](UML.png)
