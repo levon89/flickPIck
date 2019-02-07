@@ -3,6 +3,7 @@
 $greenery: #A7E163;
 $white-color: #ffffff;
 $dark-white: #CECECE;
+$red: #C00D1E;
 $center: center;
 $semi-bold: 700;
 $none: none;
@@ -195,6 +196,29 @@ body {
     @include borderRadius(3px, 3px, 3px, 3px);
     @include paddingAlignment(1em, 1em, 2px, 2px);
 }
+
+/* Correct choose style */
+.correctchoosestyle {
+    background-color: $greenery !important;
+    color: $white-color !important;
+    @include widthValue(40% !important);
+    @include borderStyle(1px !important, solid!important, $transparent !important);
+    outline: 0!important;
+    @include borderRadius(3px !important, 3px !important, 3px !important, 3px !important);
+    @include paddingAlignment(1em !important, 1em !important, 2px !important, 2px !important);
+}
+
+/* Wrong choose style */
+.wrongchoosestyle {
+    background-color: $red !important;
+    color: $white-color !important;
+    @include widthValue(40% !important);
+    @include borderStyle(1px !important, solid!important, $transparent !important);
+    outline: 0!important;
+    @include borderRadius(3px !important, 3px !important, 3px !important, 3px !important);
+    @include paddingAlignment(1em !important, 1em !important, 2px !important, 2px !important);
+}
+
 
 /* Group section */
 #dgroupsection {
