@@ -105,7 +105,7 @@ body {
 }
 
 /* Wrapper style */
-#mainwrapper {
+.mainwrapper {
     color: $white-color;
     background-color: $dark-white;
     text-align: $center;
@@ -113,13 +113,13 @@ body {
 }
 
 /* search block parent */
-#searchblock {
+.searchblock {
     @include paddingAlignment(2em, 2em, 1em, 1em);
     @include widthValue(100%);
 }
 
 /* search section parent input & submit button styles */
-#searchblock> input:first-child {
+.searchblock> input:first-child {
     background-color: $white-color;
     color: $dark-white;
     outline: $none;
@@ -130,7 +130,7 @@ body {
 }
 
 /* search section parent input & submit button styles */
-#searchblock> input:nth-child(2) {
+.searchblock> input:nth-child(2) {
     @include textAlignmentAndStyle($greenery, 13px, $semi-bold);
     background-color: $transparent;
     color: $greenery;
@@ -140,7 +140,7 @@ body {
     @include paddingAlignment(5px, 5px, 2px, 2px);
 }
 /* search section parent input & submit button styles */
-#searchblock> input:nth-child(2):hover {
+.searchblock> input:nth-child(2):hover {
     background-color: $greenery;
     color: $white-color;
     @include borderStyle(1px, solid, $transparent);
@@ -150,7 +150,7 @@ body {
 }
 
 /* search section parent input & submit button styles */
-#searchblock> input:nth-child(2):active {
+.searchblock> input:nth-child(2):active {
     background-color: $white-color;
     color: $greenery;
     @include borderStyle(1px, solid, $transparent);
@@ -160,7 +160,7 @@ body {
 }
 
 /* Drag drop section style */
-#dragdropsection {
+.dragdropsection {
     @include borderStyle(2px, dotted, $white-color);
     @include marginAlignment(1em, 1em, 2em, 2em); 
     @include borderRadius(7px, 7px, 7px, 7px);
@@ -168,7 +168,7 @@ body {
 }
 
 /* Basket section element style */
-#basketsection {
+.basketsection {
     display: $block;
     @include widthValue(100%);
     @include robotoBold();
@@ -176,7 +176,7 @@ body {
 }
 
 /* basket section first */
-#basketsection> div > input:first-child, #basketsection> div > input:nth-child(2){
+.basketsection> div  input {
     @include textAlignmentAndStyle($greenery, 13px, $semi-bold);
     background-color: $transparent;
     color: $greenery;
@@ -187,7 +187,7 @@ body {
     @include paddingAlignment(1em, 1em, 2px, 2px);
 }
 /* search section parent input & submit button styles */
-#basketsection> div > input:first-child:hover, #basketsection> div > input:nth-child(2):hover {
+.basketsection> div input:hover {
     background-color: $greenery;
     color: $white-color;
     @include widthValue(40%);
@@ -221,7 +221,7 @@ body {
 
 
 /* Group section */
-#dgroupsection {
+.dgroupsection {
     @include borderStyle(2px, dotted, $white-color);
     @include marginAlignment(1em, 1em, 2em, 2em); 
     @include borderRadius(7px, 7px, 7px, 7px);
@@ -229,12 +229,12 @@ body {
 }
 
 /* Picture block */
-#pictureblock {
+.pictureblock {
     @include widthValue(100%);
 }
 
 /* Picture block */
-#pictureblock > img {
+.pictureblock > img {
     @include widthValue(15%)
 }
 
