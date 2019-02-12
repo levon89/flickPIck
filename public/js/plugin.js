@@ -68,7 +68,8 @@
 
 
 
-        $(mainWrapper).append(searchBlockParent, imagesBlockParent, basketBlockParent, savedImageGroup)
+        $(mainWrapper).append(searchBlockParent, imagesBlockParent, basketBlockParent, savedImageGroup);
+
         
 
 
@@ -103,11 +104,8 @@
                 }
 
             });
-
-            
             // Iterate over filter(without whitespace) array and call endpoint
             $.each(arrayWithoutWhitespaces, function(index, value) {
-
 
                 // Current keyword variable
                 let currentKeyword = value;
@@ -122,7 +120,7 @@
                 // Request to flicker endpoint
                 $.getJSON(url + '&format=json&jsoncallback=?' , function( data ) {
 
-
+                   
                     // If data will be 5 then invoke
                     if(data.photos.photo.length === 5) {
 
@@ -136,7 +134,7 @@
                             // assign data iteration to flickr rest rest api request
                             let resultUrl = 'https://farm' + value.farm + '.staticflickr.com/' + value.server + '/' + value.id + '_' + value.secret + '.jpg';
                             // new image appent to predefined element and add src to already created img from previous variable 
-                            let images = $('<img>').attr({'src':resultUrl, 'data-name': currentKeyword}).appendTo(imagesBlockParent);
+                            let images = $('<img>').attr({'src':resultUrl, 'data-name': currentKeyword}).appendTo(imagesBlockChild);
                             images.css({
                                 'padding-top': '2px',
                                 'padding-bottom': '2px',
@@ -161,9 +159,11 @@
                             }
                         });
 
+                        // Get loaded iamges length
+                        let loadedImagesLength = mainWrapper.find('img').length
                         // Dropable function
                         mainWrapper.find(initialInput).droppable({
-                            tolerance: 'touch',
+                            tolerance: 'pointer',
                             accept: 'img',
                             over: function(event,ui){
                                 
@@ -180,6 +180,9 @@
                                 } else{
                                     ui.draggable.addClass('incorrect')
                                     $(this).addClass('wrongchoosestyle')
+                                    if(ui.draggable.hasClass('correctchoosestyle')) {
+                                        ui.draggable.removeClass('correctchoosestyle')
+                                    }
                                 }
 
                             },
@@ -192,9 +195,12 @@
                                 if(uiDragable == uiDropable) {
                                     // Remove current image
                                     ui.draggable.remove();
-                                    // Check if array
-                                    if(mainWrapper.find('img').length === 0){
+                                    // Assign previous stored data about images length and after each cycle reduce 1
 
+                                    let newData = --loadedImagesLength;
+                                    // Check if array
+                                    if(newData === 0){
+                                        
                                         imagesBlockParent.hide();
                                         basketBlockParent.hide();
                                         alert('Your cickle was ended');
